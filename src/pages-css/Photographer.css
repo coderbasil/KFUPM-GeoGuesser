@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.photographer-page {
+    background: url("../../public/assets/kfupm-bg.jpg") center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.photographer-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(7px) brightness(0.7);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.photographer-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.kfupm-logo {
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.welcome-text {
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: #000 0px 0px 3px, #000 0px 0px 3px, #000 0px 0px 3px,
+             #000 0px 0px 3px, #000 0px 0px 3px, #000 0px 0px 3px;
+}
+
+.logout-button {
+    background-color: #00693A;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: filter 0.3s, background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.logout-button:hover {
+    background-color: #ffffff;
+    color: #00693A;
+}
+
+
+.photographer-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.map-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map-title {
+    font-size: 1.5rem;
+    color: #00693A;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.google-map {
+    width: 100%;
+    height: 400px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid #00693A;
+}
+
+.upload-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.file-upload-group {
+    border: 2px dashed #00693A;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.file-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.upload-label {
+    font-size: 1.1rem;
+    color: #00693A;
+    font-weight: 500;
+}
+
+.description-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #00693A;
+    border-radius: 6px;
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.description-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 105, 58, 0.3);
+}
+
+.submit-button {
+    background-color: #00693A;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #004d29;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .photographer-content {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .google-map {
+        height: 300px;
+    }
+    
+    .photographer-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .kfupm-logo {
+        height: 60px;
+    }
+    
+    .welcome-text {
+        font-size: 1.5rem;
+    }
+    
+    .logout-button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
