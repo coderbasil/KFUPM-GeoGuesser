@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transform-style: preserve-3d;
+    font-family: system-ui;
+}
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("https://hr.kfupm.edu.sa/images/default-source/default-album/carosel_img1d6706de5-3993-41ba-b53e-9b0803abf654.jpg?sfvrsn=ea1211f0_1");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    place-items: center;
+    transform: perspective(500px);
+    transform-style: preserve-3d;
+}
+
+.stage {
+    --front-light-color: #4f4f4f;
+    --stage-height: 120px;
+    --first-place-height: 170px;
+    --second-place-height: 140px;
+    --third-place-height: 100px;
+    margin-top: 240px;
+    width: 600px;
+    height: 240px;
+    background: linear-gradient(to bottom, #222, var(--front-light-color));
+    transform: rotateX(80deg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 24px;
+    border-bottom: 1px solid black;
+}
+
+.stage-front {
+    content: "Leaderboard";
+    position: absolute;
+    width: 100%;
+    height: var(--stage-height);
+    padding-bottom: 30px;
+    background: linear-gradient(to bottom, var(--front-light-color), #222);
+    transform-origin: top;
+    top: 100%;
+    transform: rotateX(-80deg);
+    display: grid;
+    place-content: center;
+    color: white;
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+.tower {
+    --tower-side: 120px;
+    width: var(--tower-side);
+    aspect-ratio: 1;
+    position: relative;
+    box-shadow: 0 -2px 24px #000;
+}
+
+.tower:hover .player {
+    transform: rotateX(-88deg) translateY(-1.6rem) scale(1.2);
+}
+
+.tower .face {
+    position: absolute;
+    width: inherit;
+    background: inherit;
+    bottom: 0;
+}
+
+.tower .top {
+    aspect-ratio: inherit;
+    display: grid;
+    place-items: center;
+}
+
+.tower .top .player {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    transform: rotateX(-88deg) translateY(-1.6rem);
+    transition: transform 250ms ease;
+}
+
+.tower .left {
+    transform-origin: left;
+    left: 0;
+    width: var(--second-place-height);
+    height: var(--tower-side);
+    transform: rotateY(-90deg);
+}
+
+.tower .right {
+    transform-origin: right;
+    right: 0;
+    height: var(--tower-side);
+    width: var(--third-place-height);
+    transform: rotateY(90deg);
+}
+
+.tower .front {
+    transform-origin: bottom;
+    transform: rotateX(90deg) translateY(100%);
+}
+
+.tower.first {
+    transform: translateZ(calc(var(--first-place-height) * -1));
+    background: linear-gradient(to top, #74e050, #32bf1f);
+    animation: rise-up-first 2s ease forwards 1s;
+}
+
+.tower.first .top {
+    transform: translateZ(var(--first-place-height));
+    background: radial-gradient(#9ffc92, #32bf1f);
+}
+
+.tower.first .front {
+    height: var(--first-place-height);
+}
+
+.tower.second {
+    transform: translateZ(calc(var(--second-place-height) * -1));
+    background: linear-gradient(to top, #ffad50, #ff8b1f);
+    animation: rise-up-second 2s ease forwards 1s;
+}
+
+.tower.second .top {
+    transform: translateZ(var(--second-place-height));
+    background: radial-gradient(#ffc691, #ff8b1f);
+}
+
+.tower.second .left {
+    background: linear-gradient(to left, #ffad50, #ff8b1f);
+}
+
+.tower.second .front {
+    height: var(--second-place-height);
+}
+
+.tower.third {
+    transform: translateZ(calc(var(--third-place-height) * -1));
+    background: linear-gradient(to top, #ff6a50, #ff321f);
+    animation: rise-up-third 2s ease forwards 1s;
+}
+
+.tower.third .top {
+    transform: translateZ(var(--third-place-height));
+    background: radial-gradient(#ff968c, #ff321f);
+}
+
+.tower.third .right {
+    background: linear-gradient(to right, #ff6a50, #ff321f);
+}
+
+.tower.third .front {
+    height: var(--third-place-height);
+}
+
+@keyframes rise-up-first {
+    from {
+        transform: translateZ(calc(var(--first-place-height) * -1));
+    }
+    to {
+        transform: translateZ(0px);
+    }
+}
+
+@keyframes rise-up-second {
+    from {
+        transform: translateZ(calc(var(--second-place-height) * -1));
+    }
+    to {
+        transform: translateZ(0px);
+    }
+}
+
+@keyframes rise-up-third {
+    from {
+        transform: translateZ(calc(var(--third-place-height) * -1));
+    }
+    to {
+        transform: translateZ(0px);
+    }
+}
+
+.start-game-btn {
+    background: linear-gradient(to bottom, #09cf3b, #00693A);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(47, 12, 175, 0.3);
+}
+
+.start-game-btn:hover {
+    background: linear-gradient(to bottom, #00693A, #00693A);
+    transform: scale(1.05);
+}
