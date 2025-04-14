@@ -4,7 +4,6 @@ import './pages-css/Leaderboard.css';
 const Leaderboard = () => {
     const startNewGame = () => {
         alert("Starting a new game!");
-        // Add your game start logic here
     };
 
     return (
