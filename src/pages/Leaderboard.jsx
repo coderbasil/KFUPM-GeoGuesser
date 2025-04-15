@@ -1,5 +1,5 @@
 import React from 'react';
-import './pages-css/Leaderboard.css';
+import '../pages-css/Leaderboard.css';
 
 const Leaderboard = () => {
     const startNewGame = () => {
@@ -7,7 +7,7 @@ const Leaderboard = () => {
     };
 
     return (
-        <div>
+        <div className='leaderboard'>
             <div>
                 <button className="start-game-btn" onClick={startNewGame}>Start New Game</button>
             </div>

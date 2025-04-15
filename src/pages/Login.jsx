@@ -1,11 +1,10 @@
 import React from "react";
-import "./Login.css";
+import "../pages-css/Login.css";
 
 function Login() {
   return (
     
     <div className="login-container">
-      
       <form className="login-form">
         <div className="name-passClass">
         <center><h2>Login to GeoGuesser</h2></center>
