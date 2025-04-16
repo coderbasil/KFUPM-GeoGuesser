@@ -1,0 +1,115 @@
+/* src/components/Admin/Admin.css */
+
+.admin-container {
+    font-family: 'Arial, sans-serif';
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #D5FECB; /* Light gray background */
+    min-height: 100vh;
+  }
+  
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6; /* Light gray border */
+  }
+  
+  .admin-title {
+    color: #000000; 
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .logout-button {
+    padding: 8px 16px;
+    background-color: #d9534f; /* Red color for logout */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+  }
+  
+  .admin-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .nav-button {
+    padding: 10px 40px;
+    background-color: #e9ecef; /* Light gray for buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #495057; /* Dark gray text */
+  }
+  
+  .nav-button.active,
+  .nav-button:hover {
+    background-color: #000000; /* KFUPM blue */
+    color: white;
+  }
+  
+  .admin-main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+  }
+  
+  .section-title {
+    color: #000000; /* KFUPM blue */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d9d9d9; /* Light gray border */
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #d9d9d9; /* Light gray border */
+  }
+  
+  .table-header {
+    background-color: #000000; /* KFUPM green */
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .table-cell {
+    padding: 12px;
+    border-bottom: 1px solid #d9d9d9; /* Light gray border */
+    color: #000000; /* Dark gray text */
+  }
+  
+  .delete-button {
+    padding: 6px 12px;
+    background-color: #d9534f; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+  }
+  
+  /* Zebra striping for table rows */
+  .table-cell:nth-child(odd) {
+    background-color: #d9d9d9; /* Light gray for odd rows */
+  }
