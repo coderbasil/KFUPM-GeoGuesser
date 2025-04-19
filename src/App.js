@@ -3,6 +3,7 @@ import Landing from './pages/Landing';
 import Login from './pages/Login'
 import Leaderboard from './pages/Leaderboard'
 import Photographer from './pages/Photographer'
+import Admin from './pages/Admin'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
