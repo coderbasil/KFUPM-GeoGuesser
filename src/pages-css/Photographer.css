@@ -81,7 +81,7 @@
     padding: 2rem;
 }
 
-.map-container {
+.GoogleMap-container {
     background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     padding: 1.5rem;
@@ -89,7 +89,7 @@
     height: fit-content;
 }
 
-.map-title {
+.GoogleMap-title {
     font-size: 1.5rem;
     color: #00693A;
     margin-bottom: 1rem;

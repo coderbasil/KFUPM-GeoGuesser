@@ -23,8 +23,8 @@ const PhotographerPage = () => {
 
       <div className="photographer-content">
         
-        <div className="map-container">
-          <h2 className="map-title">Select Photo Location</h2>
+        <div className="GoogleMap-container">
+          <h2 className="GoogleMap-title">Select Photo Location</h2>
           <div className="google-map">
             <iframe
               title="kfupm-map"
