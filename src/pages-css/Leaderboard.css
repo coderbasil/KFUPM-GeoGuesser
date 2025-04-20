@@ -8,7 +8,7 @@
     font-family: system-ui;
 }
 
-body {
+.background-page {
     width: 100dvw;
     height: 100dvh;
     background: 
@@ -31,7 +31,6 @@ body {
     --first-place-height: max(170px, 17vmin);
     --second-place-height: max(140px, 14vmin);
     --third-place-height: max(100px, 10vmin);
-    margin-top: max(240px, 24vmin);
     width: max(990px, 90vmin);
     height: max(250px, 25vmin);
     background: linear-gradient(to bottom, #222, var(--front-light-color));
@@ -45,7 +44,6 @@ body {
 }
 
 .stage-front {
-    content: "Leaderboard";
     position: absolute;
     width: 100%;
     height: var(--stage-height);
@@ -207,8 +205,10 @@ body {
     transition: all 0.3s ease;
     z-index: 100;
     box-shadow: 0 4px 8px rgba(47, 12, 175, 0.3);
-    position:absolute;
+    position: fixed;
     bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .start-game-btn:hover {
@@ -217,8 +217,10 @@ body {
 }
 
 .score {
-    position: absolute;
+    position: fixed;
     top: max(120px, 12vmin);
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
     font-size: max(3.2rem, 3.2vmin);
     font-weight: bold;

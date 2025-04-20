@@ -7,9 +7,8 @@ const Leaderboard = () => {
   };
 
   return (
-    <div>
+    <div className="background-page">
       <button className="start-game-btn" onClick={startNewGame}>Start New Game</button>
-
       <div className="score">
         Your score is ..#
       </div>

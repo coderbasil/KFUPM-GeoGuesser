@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Leaderboard from './pages/Leaderboard'
 import Photographer from './pages/Photographer'
 import Admin from './pages/Admin'
+import GamePage from './pages/GamePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/photographer" element={<Photographer />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/gamepage" element={<GamePage />} />
         
         {/* 
         <Route path="/image" element={<Image />} />
