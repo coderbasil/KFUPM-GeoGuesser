@@ -8,7 +8,7 @@
     font-family: system-ui;
 }
 
-.leaderboard {
+.background-page {
     width: 100dvw;
     height: 100dvh;
     background: 
@@ -22,33 +22,32 @@
     place-items: center;
     transform: perspective(500px);
     transform-style: preserve-3d;
+    overflow: hidden;
 }
 
 .stage {
     --front-light-color: #4f4f4f;
-    --stage-height: 120px;
-    --first-place-height: 170px;
-    --second-place-height: 140px;
-    --third-place-height: 100px;
-    margin-top: 240px;
-    width: 600px;
-    height: 240px;
+    --stage-height: max(130px, 13vmin);
+    --first-place-height: max(170px, 17vmin);
+    --second-place-height: max(140px, 14vmin);
+    --third-place-height: max(100px, 10vmin);
+    width: max(990px, 90vmin);
+    height: max(250px, 25vmin);
     background: linear-gradient(to bottom, #222, var(--front-light-color));
     transform: rotateX(80deg);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding-top: 24px;
+    padding-top: max(24px, 2.4vmin);
     border-bottom: 1px solid black;
 }
 
 .stage-front {
-    content: "Leaderboard";
     position: absolute;
     width: 100%;
     height: var(--stage-height);
-    padding-bottom: 30px;
+    padding-bottom: max(30px, 3vmin);
     background: linear-gradient(to bottom, var(--front-light-color), #222);
     transform-origin: top;
     top: 100%;
@@ -56,12 +55,12 @@
     display: grid;
     place-content: center;
     color: white;
-    font-size: 3.2rem;
+    font-size: max(3.2rem, 3.2vmin);
     font-weight: bold;
 }
 
 .tower {
-    --tower-side: 120px;
+    --tower-side: max(120px, 12vmin);
     width: var(--tower-side);
     aspect-ratio: 1;
     position: relative;
@@ -69,7 +68,7 @@
 }
 
 .tower:hover .player {
-    transform: rotateX(-88deg) translateY(-1.6rem) scale(1.2);
+    transform: rotateX(-88deg) translateY(calc(-1 * max(1.6rem, 1.6vmin))) scale(1.2);
 }
 
 .tower .face {
@@ -87,9 +86,9 @@
 
 .tower .top .player {
     color: white;
-    font-size: 1.6rem;
+    font-size: max(1.9rem, 1.6vmin);
     font-weight: bold;
-    transform: rotateX(-88deg) translateY(-1.6rem);
+    transform: rotateX(-88deg) translateY(calc(-1 * max(1.6rem, 1.6vmin)));
     transition: transform 250ms ease;
 }
 
@@ -198,17 +197,31 @@
     background: linear-gradient(to bottom, #09cf3b, #00693A);
     color: white;
     border: none;
-    padding: 12px 24px;
-    font-size: 1.5rem;
+    padding: max(12px, 1.2vmin) max(24px, 2.4vmin);
+    font-size: max(1.8rem, 1.5vmin);
     font-weight: bold;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: max(4px, 0.4vmin);
     transition: all 0.3s ease;
     z-index: 100;
     box-shadow: 0 4px 8px rgba(47, 12, 175, 0.3);
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .start-game-btn:hover {
     background: linear-gradient(to bottom, #00693A, #00693A);
     transform: scale(1.05);
+}
+
+.score {
+    position: fixed;
+    top: max(120px, 12vmin);
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: max(3.2rem, 3.2vmin);
+    font-weight: bold;
 }

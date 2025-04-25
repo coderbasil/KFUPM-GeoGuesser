@@ -10,7 +10,7 @@ const Admin = () => {
   ]);
 
   const handleLogout = () => {
-    // Handle logout logic here
+    
   };
 
   const handleDeleteUser = (id) => {
@@ -79,7 +79,7 @@ const Admin = () => {
           </>
         )}
         
-        {/* يمكنك إضافة الأقسام الأخرى هنا */}
+
       </main>
     </div>
   );
