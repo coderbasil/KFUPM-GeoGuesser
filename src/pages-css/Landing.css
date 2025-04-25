@@ -1,122 +1,107 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
- 
-  .landing-page {
-    background: url("../../public/assets/kfupm-bg.jpg") center center no-repeat;
-    background-size: cover;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
-  
- 
-  .landing-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    backdrop-filter: blur(7px) brightness(0.7);
-   
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  
- 
-  .header {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-  }
-  
- 
-  .kfupm-logo {
-    height: 350px;
-    cursor: pointer;
-  }
-  
- 
-  .login-button {
-    background-color: #00693A;
-    color: #ffffff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: filter 0.3s, background-color 0.3s, color 0.3s;
-  }
-  
- 
-  .login-button:hover {
-    background-color: #ffffff;
-    color: #00693A;
-  }
-  
- 
-  .content-wrapper {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px);
-    text-align: center;
-    padding: 1rem;
-  }
-  
- 
-  .text-block {
-    border-radius: 8px;
-    padding: 2rem;
-    max-width: 600px;
-  }
-  
- 
-  .title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
-    text-shadow: #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px,
-             #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px;
-  }
-  
- 
-  .description {
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: #ffffff;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    text-shadow: #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px,
-             #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px;
-  }
-  
- 
-  .start-button {
-    background-color: #00693A;
-    color: #ffffff;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: filter 0.3s, background-color 0.3s, color 0.3s;
-  }
-  
- 
-  .start-button:hover {
-    background-color: #ffffff;
-    color: #00693A;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.landing-page {
+  background: url("../../public/assets/kfupm-bg.jpg") center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(7px) brightness(0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.kfupm-logo {
+  height: 350px;
+  cursor: pointer;
+}
+
+.login-button {
+  background-color: #00693a;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: filter 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #ffffff;
+  color: #00693a;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  text-align: center;
+  padding: 1rem;
+}
+
+.text-block {
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: #000 0px 0px 3px, #000 0px 0px 3px, #000 0px 0px 3px,
+    #000 0px 0px 3px, #000 0px 0px 3px, #000 0px 0px 3px;
+}
+
+.description {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  text-shadow: #000 0px 0px 3px, #000 0px 0px 3px, #000 0px 0px 3px,
+    #000 0px 0px 3px, #000 0px 0px 3px, #000 0px 0px 3px;
+}
+
+.start-button {
+  background-color: #00693a;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: filter 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #ffffff;
+  color: #00693a;
+}
