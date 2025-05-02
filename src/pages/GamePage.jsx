@@ -1,12 +1,11 @@
 // GamePage.jsx
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState, useRef, use } from "react";
 import "../pages-css/GamePage.css";
-
-const dummyPhoto = "./assets/kfupm-bg.jpg";
-const CORRECT_POS = { x: 325, y: 447 };
 
 export default function GamePage() {
   const campusMap = "./assets/map.png";
+  const [photo, setPhoto] = useState(null);
+  const [CORRECT_POS, setCorrectPos] = useState({ x: 0, y: 0 });
   const [stage, setStage] = useState("view");
   const [guessPos, setGuessPos] = useState(null);
   const [scale, setScale] = useState(0.9);
@@ -15,10 +14,41 @@ export default function GamePage() {
   const [lastMouse, setLastMouse] = useState({ x: 0, y: 0 });
   const [startOffset, setStartOffset] = useState({ x: 0, y: 0 });
   const [score, setScore] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   const mapClickRef = useRef(null);
   const containerRef = useRef(null);
   const mapImageRef = useRef(null);
+
+  const fetchRandomPhoto = () => {
+    setIsLoading(true);
+    fetch("http://localhost:5000/api/photos/random")
+      .then((res) => res.json())
+      .then((data) => {
+        const img = new Image();
+        img.src = data.url;
+        img.onload = () => {
+          setPhoto(data.url);
+          setCorrectPos(data.coord);
+          setIsLoading(false);
+        };
+      })
+      .catch((err) => {
+        console.error(err);
+        setIsLoading(false);
+      });
+  };
+
+  useEffect(fetchRandomPhoto, []);
+
+  const handlePlayAgain = () => {
+    setScore(0);
+    setGuessPos(null);
+    setScale(0.9);
+    setOffset({ x: 0, y: 0 });
+    setStage("view");
+    fetchRandomPhoto();
+  };
 
   const handleWheel = (e) => {
     e.preventDefault();
@@ -83,11 +113,20 @@ export default function GamePage() {
     setStage("result");
   };
 
+  if (isLoading) {
+    return (
+      <div className="game-page loading">
+        <div className="spinner" />
+        <p className="loading-text">Loading photo…</p>
+      </div>
+    );
+  }
+
   return (
     <div className="game-page">
       {stage === "view" && (
         <div className="view-stage">
-          <img src={dummyPhoto} alt="View" className="full-image" />
+          <img src={photo} alt="View" className="full-image" />
           <button className="g-button" onClick={() => setStage("guess")}>
             Make a Guess of Where this is!
           </button>
@@ -96,7 +135,7 @@ export default function GamePage() {
 
       {stage === "guess" && (
         <div className="guess-stage">
-          <img src={dummyPhoto} className="background-image" alt="" />
+          <img src={photo} className="background-image" alt="" />
 
           <div
             className={`map-container ${isDragging ? "dragging" : ""}`}
@@ -151,7 +190,7 @@ export default function GamePage() {
       )}
       {stage === "result" && (
         <div className="result-stage">
-          <img src={dummyPhoto} className="background-img" alt="View" />
+          <img src={photo} className="background-img" alt="View" />
 
           <div className="result-card">
             <h2 className="result-title">Your Score</h2>
@@ -159,9 +198,7 @@ export default function GamePage() {
             <button
               className="g-button play-again-btn"
               onClick={() => {
-                setScore(0);
-                setGuessPos(null);
-                setStage("view");
+                handlePlayAgain();
               }}
             >
               Play Again
