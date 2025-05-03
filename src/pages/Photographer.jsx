@@ -1,4 +1,3 @@
-// src/pages/PhotographerPage.jsx
 import React, { useRef, useState, useEffect } from "react";
 import "../pages-css/Photographer.css";
 
@@ -13,14 +12,29 @@ const PhotographerPage = () => {
     coordinates: null,
   });
 
+  const handleSubmit = async (e) => {
+    console.log("hi");
+    e.preventDefault();
+    const fd = new FormData();
+    fd.append("photo", formData.photo);
+    fd.append("difficulty", formData.difficulty);
+    fd.append("x", formData.coordinates.x);
+    fd.append("y", formData.coordinates.y);
+
+    await fetch("http://localhost:5000/api/upload/photos", {
+      method: "POST",
+      body: fd,
+    });
+  };
+
   useEffect(() => {
     const originalOverflow = document.body.style.overflow || "";
     if (showMapModal) {
-      document.body.style.overflow = "hidden"; // ✨ lock scrolling
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = originalOverflow; // 🔓 restore
+      document.body.style.overflow = originalOverflow;
     }
-    // clean‑up if the component unmounts while the modal is open
+
     return () => (document.body.style.overflow = originalOverflow);
   }, [showMapModal]);
 
@@ -117,7 +131,7 @@ const PhotographerPage = () => {
       <div className="photographer-content">
         <div className="upload-container">
           <h2 className="section-title">Upload New Photo</h2>
-          <form className="upload-form">
+          <form className="upload-form" onSubmit={handleSubmit}>
             <div className="file-upload-group">
               <input
                 type="file"
