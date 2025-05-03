@@ -40,6 +40,7 @@ const App = () => {
         <Route path="/gamepage" element={<GamePage />} />
       </Routes>
     </Router>
+   
   );
 };
 
