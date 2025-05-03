@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
-import '../pages-css/Admin.css';
+import React, { useState } from "react";
+import "../pages-css/Admin.css";
 
 const Admin = () => {
-  const [activeTab, setActiveTab] = useState('users');
+  const [activeTab, setActiveTab] = useState("users");
   const [users, setUsers] = useState([
-    { id: 1, username: 'admin', type: 'admin' },
-    { id: 2, username: 'AlouLab', type: 'player' },
-    { id: 3, username: 'Ahmed', type: 'Photographer' }
+    { id: 1, username: "admin", type: "admin" },
+    { id: 2, username: "AlouLab", type: "player" },
+    { id: 3, username: "Ahmed", type: "Photographer" },
   ]);
 
-  const handleLogout = () => {
-    
-  };
+  const handleLogout = () => {};
 
   const handleDeleteUser = (id) => {
-    setUsers(users.filter(user => user.id !== id));
+    setUsers(users.filter((user) => user.id !== id));
   };
 
   return (
@@ -57,13 +55,13 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-                {users.map(user => (
+                {users.map((user) => (
                   <tr key={user.id}>
                     <td className="table-cell">{user.id}</td>
                     <td className="table-cell">{user.username}</td>
                     <td className="table-cell">{user.type}</td>
                     <td className="table-cell">
-                      <button 
+                      <button
                         className="delete-button"
                         onClick={() => handleDeleteUser(user.id)}
                       >
@@ -74,10 +72,8 @@ const Admin = () => {
                 ))}
               </tbody>
             </table>
-          </>
+          </div>
         )}
-        
-
       </main>
     </div>
   );

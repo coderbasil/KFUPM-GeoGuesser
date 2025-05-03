@@ -22,7 +22,7 @@ export default function GamePage() {
 
   const fetchRandomPhoto = () => {
     setIsLoading(true);
-    fetch("http://localhost:5000/api/photos/random")
+    fetch("http://16.16.122.240:5000/api/photos/random")
       .then((res) => res.json())
       .then((data) => {
         const img = new Image();

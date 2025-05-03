@@ -21,7 +21,7 @@ const PhotographerPage = () => {
     fd.append("x", formData.coordinates.x);
     fd.append("y", formData.coordinates.y);
 
-    await fetch("http://localhost:5000/api/upload/photos", {
+    await fetch("http://16.16.122.240:5000/api/upload/photos", {
       method: "POST",
       body: fd,
     });
